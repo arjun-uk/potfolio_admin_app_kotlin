@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.fragments.FragmentProfile"
+    android:background="@drawable/backgroud_gradient">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/update_profile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            tools:ignore="MissingPrefix" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/profile_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:src="@drawable/profile"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:background="@drawable/edt_main_bg"
+            android:hint="@string/name"
+            android:paddingStart="@dimen/_10sdp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/_14ssp"
+            tools:ignore="RtlSymmetry"
+            />
+
+
+
+
+            <EditText
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:background="@drawable/edt_main_bg"
+                android:id="@+id/edt_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:hint="@string/title"
+                android:paddingStart="@dimen/_10sdp"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_14ssp"
+                tools:ignore="RtlSymmetry"
+                />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:background="@drawable/edt_main_bg">
+            <EditText
+                android:id="@+id/edt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/description"
+                android:paddingVertical="@dimen/_5sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:singleLine="false"
+                android:background="@null"
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_14ssp"
+                tools:ignore="RtlSymmetry"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:background="@drawable/edt_main_bg">
+            <EditText
+                android:id="@+id/edt_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/about"
+                android:paddingVertical="@dimen/_5sdp"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:singleLine="false"
+                android:background="@null"
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_14ssp"
+                tools:ignore="RtlSymmetry"
+                />
+        </RelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_centerHorizontal="true"
+                android:id="@+id/button_submit"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="@string/update"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:backgroundTint="@color/secondary_color"
+                app:cornerRadius="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

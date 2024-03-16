@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077657614279",
+    "project_id": "portfoliobackend-df6d2",
+    "storage_bucket": "portfoliobackend-df6d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077657614279:android:c6a203da8721ec87520be2",
+        "android_client_info": {
+          "package_name": "com.admin.portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEaYt0tT_haB0RffikNyxnSBZlYP-nrxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/backgroud_gradient"
+    tools:context=".ui.home.fragments.FragmentExperience">
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Add Expertise field"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            tools:ignore="MissingPrefix" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/_150sdp"
+                android:scaleType="centerCrop"
+                android:layout_height="@dimen/_120sdp"
+                android:src="@drawable/experience" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:background="@drawable/edt_main_bg"
+            android:hint="Expertise field"
+            android:paddingStart="@dimen/_10sdp"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="@dimen/_14ssp"
+            tools:ignore="RtlSymmetry"
+            />
+
+
+
+
+
+
+        <RelativeLayout
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_centerHorizontal="true"
+                android:id="@+id/button_submit"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="@string/add_expertise"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:backgroundTint="@color/secondary_color"
+                app:cornerRadius="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

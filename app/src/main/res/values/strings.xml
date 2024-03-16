@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PortfolioAdmin</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="admin_login">Admin Login</string>
+    <string name="email">Email</string>
+    <string name="experience">Experience</string>
+    <string name="projects">Project</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="submit">Submit</string>
+    <string name="update_profile">Update profile</string>
+    <string name="update">Update</string>
+    <string name="name">Name</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="about">About</string>
+    <string name="add_expertise">Add Expertise</string>
+    <string name="add_project">Add Project</string>
+    <string name="project_name">Project Name</string>
+    <string name="project_url">Project Url</string>
+</resources>
