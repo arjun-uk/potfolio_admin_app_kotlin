@@ -11,17 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <RelativeLayout
 
-        <TextView
-
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
-            android:text="@string/update_profile"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp"
-            tools:ignore="MissingPrefix" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/update_profile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                tools:ignore="MissingPrefix" />
+            <ImageView
+
+                android:id="@+id/logOut"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/logout"/>
+        </RelativeLayout>
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -75,7 +88,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_120sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginHorizontal="@dimen/_20sdp"
             android:background="@drawable/edt_main_bg">
@@ -98,7 +112,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/_120sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginHorizontal="@dimen/_20sdp"
             android:background="@drawable/edt_main_bg">

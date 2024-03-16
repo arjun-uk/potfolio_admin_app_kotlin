@@ -52,4 +52,9 @@ class ActivityHome : AppCompatActivity() {
         fragmentTransaction.replace(R.id.container, fragment)
         fragmentTransaction.commit()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
 }
