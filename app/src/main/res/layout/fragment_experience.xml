@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:id="@+id/displayImg"
                 android:layout_marginVertical="@dimen/_20sdp"
                 android:layout_centerHorizontal="true"
                 android:layout_width="@dimen/_150sdp"
@@ -58,11 +59,13 @@
 
 
 
-        <RelativeLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_gravity="center_horizontal"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginTop="@dimen/_20sdp">
 
             <com.google.android.material.button.MaterialButton
@@ -70,7 +73,7 @@
                 android:id="@+id/button_submit"
                 android:layout_width="@dimen/_150sdp"
                 android:layout_height="@dimen/_50sdp"
-                android:text="@string/add_expertise"
+                android:text="@string/add_project"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14ssp"
@@ -79,8 +82,20 @@
                 android:layout_marginBottom="@dimen/_20sdp"
                 />
 
-
-        </RelativeLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_centerHorizontal="true"
+                android:id="@+id/view_added_list"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="@string/added_list"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:backgroundTint="@color/secondary_color"
+                app:cornerRadius="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 

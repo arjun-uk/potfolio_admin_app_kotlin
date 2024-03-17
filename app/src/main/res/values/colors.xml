@@ -7,6 +7,8 @@
     <color name="dark_blue">#3984F4</color>
     <color name="light_blue">#0EAFD9</color>
     <color name="black_transparent">#B9000000</color>
+    <color name="orange">#E2A100</color>
+    <color name="red">#FF0000</color>
 
 
 </resources>

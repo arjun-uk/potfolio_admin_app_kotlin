@@ -13,29 +13,31 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.AppCompatButton
+import by.dzmitry_lakisau.month_year_picker_dialog.MonthYearPickerDialog
 import com.admin.portfolio.R
 import com.google.firebase.Firebase
 import com.google.firebase.storage.storage
 import com.admin.portfolio.databinding.FragmentProfileBinding
-import com.admin.portfolio.ui.home.view.ActivityHome
 import com.admin.portfolio.ui.login.ActivityLogin
 import com.admin.portfolio.utils.CustomProgressDialog
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 
 class FragmentProfile : Fragment() {
     private lateinit var binding: FragmentProfileBinding;
     lateinit var storage: FirebaseStorage
     var ImageUrlProfile: String? = null
+    var selectedMonthYear : String?=null
     lateinit var progressDialog: CustomProgressDialog
     private lateinit var auth: FirebaseAuth
 
@@ -80,6 +82,12 @@ class FragmentProfile : Fragment() {
         binding.logOut.setOnClickListener {
             showLogout("Are you sure to logout ?")
         }
+        binding.edtJoined.setOnClickListener{
+            MonthYearDialog("joined")
+        }
+        binding.edtResigned.setOnClickListener{
+            MonthYearDialog("resigned")
+        }
         getProfile()
     }
 
@@ -88,14 +96,18 @@ class FragmentProfile : Fragment() {
         progressDialog.showProgressDialog()
         val db = FirebaseFirestore.getInstance()
 
+
+
         val profileData = hashMapOf(
             "name" to binding.edtName.text.toString(),
             "Title" to binding.edtTitle.text.toString(),
             "aboutMe" to binding.edtAbout.text.toString(),
             "ProfileImage" to ImageUrlProfile,
             "Description" to binding.edtDescription.text.toString(),
-
-
+            "company" to binding.edtCompany.text.toString(),
+            "designation" to binding.edtDesignation.text.toString(),
+            "joined" to binding.edtJoined.text.toString(),
+            "resigned" to binding.edtResigned.text.toString(),
             )
 
         db.collection("Portfolio")
@@ -127,10 +139,20 @@ class FragmentProfile : Fragment() {
                     val Title = document.getString("Title")
                     val name = document.getString("name")
                     val Description = document.getString("Description")
+                    val company = document.getString("company")
+                    val designation = document.getString("designation")
+                    val joined = document.getString("joined")
+                    val resigned = document.getString("resigned")
                     binding.edtName.setText(name)
                     binding.edtAbout.setText(aboutMe)
                     binding.edtDescription.setText(Description)
                     binding.edtTitle.setText(Title)
+                    binding.edtCompany.setText(company)
+                    binding.edtDesignation.setText(designation)
+                    binding.edtJoined.setText(joined)
+                    binding.edtResigned.setText(resigned)
+
+
                     Glide.with(this).load(ImageUrlProfile).into(binding.profileImage)
 
                 } else {
@@ -193,6 +215,30 @@ class FragmentProfile : Fragment() {
             val intent = Intent (it, ActivityLogin::class.java)
             it.startActivity(intent)
         }
+
+    }
+
+    private fun MonthYearDialog(type:String){
+
+        MonthYearPickerDialog.Builder(
+            requireContext(),
+            R.style.Style_MonthYearPickerDialog_Orange,
+            { year, month ->
+                val calendar = Calendar.getInstance()
+                calendar.set(Calendar.YEAR, year)
+                calendar.set(Calendar.MONTH, month)
+                val dateString = SimpleDateFormat("MMM yyyy", Locale.getDefault()).format(calendar.time)
+                Log.d("dateString", "MonthYearDialog: "+dateString)
+
+                selectedMonthYear = dateString;
+                if (type == "joined"){
+                    binding.edtJoined.setText(selectedMonthYear)
+                }else{
+                    binding.edtResigned.setText(selectedMonthYear)
+                }
+            },
+
+        ).build().show()
 
     }
 

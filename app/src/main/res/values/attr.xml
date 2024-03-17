@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="headerBackgroundColor" format="color|reference" />
+    <attr name="headerTextColor" format="color|reference" />
+    <attr name="headerTextColorSelected" format="color|reference" />
+
+    <attr name="monthBackgroundColorSelected" format="color|reference" />
+    <attr name="monthTextColor" format="color|reference" />
+    <attr name="monthTextColorDisabled" format="color|reference" />
+    <attr name="monthTextColorSelected" format="color|reference" />
+
+    <attr name="yearTextColor" format="color|reference" />
+    <attr name="yearTextColorSelected" format="color|reference" />
+</resources>

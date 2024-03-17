@@ -58,7 +58,8 @@ class ActivityLogin : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d("ActivityLogin", "LoginSetup: "+task.result.user)
+                    val userId = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+                    Log.d("ActivityLogin", "LoginSetup: "+userId)
                     startActivity(Intent(this,ActivityHome::class.java))
                     finish()
                 } else {

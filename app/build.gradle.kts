@@ -58,4 +58,5 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-database")
+    implementation("io.github.dzmitry-lakisau:month-year-picker-dialog:1.0.0")
 }

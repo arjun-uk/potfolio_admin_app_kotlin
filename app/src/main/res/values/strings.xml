@@ -20,4 +20,8 @@
     <string name="add_project">Add Project</string>
     <string name="project_name">Project Name</string>
     <string name="project_url">Project Url</string>
+    <string name="designation">Designation</string>
+    <string name="joined">Joined</string>
+    <string name="resigned">Resigned</string>
+    <string name="added_list">Added List</string>
 </resources>

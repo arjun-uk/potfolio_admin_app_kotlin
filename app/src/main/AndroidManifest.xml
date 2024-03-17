@@ -20,6 +20,12 @@
         android:theme="@style/Theme.PortfolioAdmin"
         tools:targetApi="31">
         <activity
+            android:name=".ui.experience.view.ActivityExpertise"
+            android:exported="false" />
+        <activity
+            android:name=".ui.projects.view.ActivityAddedProjects"
+            android:exported="false" />
+        <activity
             android:name=".ui.ActivitySplash"
             android:exported="true">
             <intent-filter>
@@ -30,7 +36,7 @@
         </activity>
         <activity
             android:name=".ui.login.ActivityLogin"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".ui.home.view.ActivityHome"
             android:exported="false" />
