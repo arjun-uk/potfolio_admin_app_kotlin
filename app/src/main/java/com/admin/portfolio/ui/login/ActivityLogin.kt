@@ -14,11 +14,13 @@ import com.google.firebase.Firebase
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.database
+import kotlin.math.log
 
 class ActivityLogin : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding;
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
+    private var type:String?=null;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -38,6 +40,9 @@ class ActivityLogin : AppCompatActivity() {
     }
 
     private fun init() {
+
+        type = intent.getStringExtra("type")
+
 
 
         binding.buttonSubmit.setOnClickListener {

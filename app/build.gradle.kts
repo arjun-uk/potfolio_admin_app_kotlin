@@ -4,6 +4,8 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+
+
 android {
     namespace = "com.admin.portfolio"
     compileSdk = 34
@@ -17,6 +19,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
+
 
     buildTypes {
         release {
@@ -34,12 +38,17 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    dataBinding{
+        enable = true
+    }
    buildFeatures{
        viewBinding = true
+
    }
 }
 
 dependencies {
+
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -59,4 +68,15 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-database")
     implementation("io.github.dzmitry-lakisau:month-year-picker-dialog:1.0.0")
+
+    implementation("com.vanniktech:android-image-cropper:4.5.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
+
 }
+

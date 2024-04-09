@@ -20,6 +20,12 @@
         android:theme="@style/Theme.PortfolioAdmin"
         tools:targetApi="31">
         <activity
+            android:name=".libs.ActivityCrop"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.imageCropper.ImageCropper"
+            android:exported="false" />
+        <activity
             android:name=".ui.experience.view.ActivityExpertise"
             android:exported="false" />
         <activity
@@ -40,6 +46,7 @@
         <activity
             android:name=".ui.home.view.ActivityHome"
             android:exported="false" />
+
     </application>
 
 </manifest>

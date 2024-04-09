@@ -1,6 +1,7 @@
 package com.admin.portfolio.ui.home.fragments
 
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -13,8 +14,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.AppCompatButton
 import by.dzmitry_lakisau.month_year_picker_dialog.MonthYearPickerDialog
@@ -25,6 +29,7 @@ import com.admin.portfolio.databinding.FragmentProfileBinding
 import com.admin.portfolio.ui.login.ActivityLogin
 import com.admin.portfolio.utils.CustomProgressDialog
 import com.bumptech.glide.Glide
+import com.canhub.cropper.CropImageView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -38,15 +43,21 @@ class FragmentProfile : Fragment() {
     lateinit var storage: FirebaseStorage
     var ImageUrlProfile: String? = null
     var selectedMonthYear : String?=null
+    var uriMAin:Uri?=null
     lateinit var progressDialog: CustomProgressDialog
     private lateinit var auth: FirebaseAuth
+
+
 
 
     private val galleryLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             uri?.let { galleryUri ->
                 try {
+
                     UploadImage(galleryUri)
+                    //CropMethod(galleryUri)
+
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -67,6 +78,7 @@ class FragmentProfile : Fragment() {
         storage = Firebase.storage
         binding.profileImage.setOnClickListener {
             galleryLauncher.launch("image/*")
+
         }
         binding.buttonSubmit.setOnClickListener {
             if (validateFields()) {
@@ -89,6 +101,8 @@ class FragmentProfile : Fragment() {
             MonthYearDialog("resigned")
         }
         getProfile()
+
+
     }
 
     private fun UpdateProfile() {
@@ -218,6 +232,8 @@ class FragmentProfile : Fragment() {
 
     }
 
+
+
     private fun MonthYearDialog(type:String){
 
         MonthYearPickerDialog.Builder(
@@ -269,5 +285,33 @@ class FragmentProfile : Fragment() {
 
         dialog.show()
     }
+
+//    private fun CropMethod(uri: Uri) {
+//        val dialog = Dialog(requireContext())
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+//        dialog.setCancelable(false)
+//        dialog.setContentView(R.layout.activity_crop)
+//
+//       val cropImageView = dialog.findViewById(R.id.cropImageView) as CropImageView
+//       val donw = dialog.findViewById(R.id.done) as ImageView
+//        cropImageView.setImageUriAsync(uri)
+//        cropImageView.setOnCropImageCompleteListener { view, result ->
+//            if (result.isSuccessful) {
+//                view.setOnClickListener{
+//                    Log.d("CropMethod", "CropMethod: "+result.uriContent)
+//                }
+//
+//            }
+//        }
+//        donw.setOnClickListener{
+//            uriMAin?.let { UploadImage(it) }
+//            dialog.dismiss()
+//        }
+//
+//
+//
+//        dialog.show()
+//    }
+
 
 }
